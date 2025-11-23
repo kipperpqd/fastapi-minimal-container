@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copiar requisitos e instalar
-COPY app/requirements.txt /app/
+COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar código
