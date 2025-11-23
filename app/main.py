@@ -19,3 +19,9 @@ async def inserir_cliente(request: Request):
     # aqui você pode validar, processar, transformar
     return {"status": "cliente recebido", "dados": data}
 
+@app.get("/clientes")
+async def listar_clientes():
+    return [
+        {"id": 1, "nome": "Luis"},
+        {"id": 2, "nome": "Reuben"}
+    ]
