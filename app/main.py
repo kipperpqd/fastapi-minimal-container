@@ -2,7 +2,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import datetime
 
+from app.routes.hello import router as hello_router  # <-- IMPORTANTE
+
 app = FastAPI()
+
+# Registrar as rotas
+app.include_router(hello_router)
 
 class TaskRequest(BaseModel):
     nome: str
@@ -25,4 +30,3 @@ def run_task(payload: TaskRequest):
         "parametros_recebidos": payload.parametros,
         "executado_em": datetime.datetime.now().isoformat(),
     }
-
