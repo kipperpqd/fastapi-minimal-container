@@ -7,11 +7,6 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Instalar dependências do sistema
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
 
 # Copiar requisitos e instalar
 COPY app/requirements.txt .
