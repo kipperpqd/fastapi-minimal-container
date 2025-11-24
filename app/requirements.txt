@@ -1,2 +1,14 @@
 fastapi 
 uvicorn[standard] 
+pandas
+numpy
+yfinance
+scikit-learn
+xgboost
+scipy
+joblib
+python-dotenv
+requests
+ta # Technical Analysis
+catboost # Opcional, mas incluído para suportar sua função
+pydantic
