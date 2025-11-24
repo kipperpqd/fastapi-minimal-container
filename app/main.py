@@ -37,7 +37,7 @@ app = FastAPI(title="Quant Trading Signal API", version="1.0.0")
 class SignalRequest(BaseModel):
     """Modelo de entrada para o endpoint de análise de sinais."""
     tickers: List[str] = Field(..., description="Lista de símbolos de ativos (e.g., MSFT, PETR4.SA, BTC-USD).")
-    start_date: Optional[str] = Field("2010-01-01", description="Data inicial para coleta de dados (Formato YYYY-MM-DD).")
+    start_date: Optional[str] = Field("2015-01-01", description="Data inicial para coleta de dados (Formato YYYY-MM-DD).")
     end_date: Optional[str] = Field(None, description="Data final para coleta de dados (Formato YYYY-MM-DD). Se nulo, usa a data atual.")
     horizonte_dias: int = Field(5, description="Horizonte de previsão do target (dias).")
     k_volatilidade: float = Field(0.4, description="Multiplicador de volatilidade para definir o target de retorno significativo.")
@@ -138,7 +138,7 @@ def carregar_dados(ticker, start_date=None, end_date=None):
     return out
 
 # 3) Indicadores técnicos + features avançadas (mantido do seu código)
-def rsrs_features(df, window=18):
+def rsrs_features(df, window=12):
     # ... (Seu código original da função rsrs_features) ...
     low = df["low"].values
     high = df["high"].values
