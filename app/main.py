@@ -204,8 +204,3 @@ async def get_metrics_info():
             "sharpe": "Relação Retorno/Risco (quanto maior, melhor)"
         }
     }
-```eof
-
-Agora o seu `app/main.py` está puramente como o **Orquestrador**. Ele depende da existência dos módulos separados (`data_loader.py`, `feature_eng.py`, etc.).
-
-Qual módulo você gostaria de confirmar ou editar agora? Sugiro o `app/data_loader.py`.
